@@ -1,0 +1,64 @@
+<style>
+    h3 {
+        color:#eeeeee;
+    }
+    #details {
+        width:220px;
+        float:right;
+    }
+    .modal-body {
+        padding:10px;
+        background-color: #474747;
+    }
+    .modal-content {
+        height: 500px;
+        background-color: #474747;
+    }
+    .alert-info {
+        background-color:#474747;
+        color:#eeeeee;
+        border:none;
+    }
+    .close {
+        color:#eeeeee;
+        text-shadow: none;
+        opacity: 1;
+    }
+    .btn-default {
+        background-color: #474747;
+        color:#eeeeee;
+        border:none;
+    }
+    .modal-backdrop.in {
+        opacity: 0.8;
+    }
+    .popupText {
+        color:#eeeeee;
+    }
+    .index {
+        float:left;
+    }
+</style>
+
+
+<div class="modal-body" ng-swipe-left="Lightbox.nextImage()" ng-swipe-right="Lightbox.prevImage()">
+    <div class="popupText index">{{Lightbox.index + 1}} / {{Lightbox.images.length}}</div>
+    <div class="lightbox-nav">
+        <button class="close" aria-hidden="true" ng-click="$dismiss()">×</button>
+        <div class="btn-group popupText" ng-if="Lightbox.images.length > 1">
+            <a class="btn btn-xs btn-default" ng-click="Lightbox.prevImage();">‹ Previous</a>
+
+            <a class="btn btn-xs btn-default" ng-click="Lightbox.nextImage();">Next ›</a>
+        </div>
+    </div>
+</div>
+<div class="modal-body map"
+     ng-swipe-left="Lightbox.nextImage();"
+     ng-swipe-right="Lightbox.prevImage();">
+    <h3>{{Lightbox.eventTitle}}</h3>
+    <div id="map"></div>
+    <div id="details">
+        <div class="popupText">Date: {{Lightbox.eventStateDate | date:shortDate}}</div>
+        <div class="popupText">Time: {{Lightbox.startTime}} to {{Lightbox.endTime}}</div>
+    </div>
+</div>
