@@ -1,0 +1,39 @@
+[{
+"eventTitle": "SharkTails",
+"eventStateDate": "2016-06-03",
+"startTime": "10pm",
+"endTime": "2am",
+"notes": "",
+  "lat": 27.741048,
+  "lng":-82.754174
+},
+  {
+"eventTitle": "World of Beer - Westchase",
+"eventStateDate": "2016-06-17",
+"startTime": "9pm",
+"endTime": "1am",
+"notes": "",
+  "lat": 28.043213,
+  "lng":-82.592173
+}
+,
+  {
+    "eventTitle": "World of Beer - Westchase",
+    "eventStateDate": "2016-07-08",
+    "startTime": "9pm",
+    "endTime": "1am",
+    "notes": "",
+    "lat": 28.043213,
+    "lng":-82.592173
+  }
+,
+  {
+    "eventTitle": "World of Beer - Westchase",
+    "eventStateDate": "2016-08-12",
+    "startTime": "9pm",
+    "endTime": "1am",
+    "notes": "",
+    "lat": 28.043213,
+    "lng":-82.592173
+  }
+]

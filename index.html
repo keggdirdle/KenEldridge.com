@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta property="og:title" content="All things Ken Eldridge"/>
+    <meta property="og:image" content="http://keneldridge.com/assets/img/logo-e.png"/>
+    <meta property="og:site_name" content="Ken Eldridge"/>
+    <meta property="og:description" content="I'm just a guy who loves great bourbon, shitty pop music, Oxford commas, and women way out of my league."/>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="I'm just a guy who loves great bourbon, shitty pop music, Oxford commas, and women way out of my league" />
+    <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+    <base href="/">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/angular-bootstrap-lightbox.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <title>KenEldridge.com</title>
+</head>
+<body >
+<header>
+    <span class="logo">
+        <img src="assets/img/logo.png">
+    </span>
+    <nav>
+        <a href="#musicDiv">Music</a>
+        <a href="#cameraDiv">Photography</a>
+        <a href="#laptopDiv">Development</a>
+        <a href="#contactDiv">Contact</a>
+    </nav>
+</header>
+
+<div id="musicDiv" ng-app="demo2">
+    <div id="musicLayer">
+        <img src="assets/img/arrow.png" />
+        This is me. <br >
+        I breathe and push buttons. <br />
+        People seem to dig it.
+    </div>
+    <div id="musicCTA" ng-controller="GalleryCtrl" >
+        <button id="musicButton" ng-click="getUpcomingShows();">Upcoming shows</button>
+    </div>
+</div>
+
+<div id="cameraDiv"  ng-app="demo2">
+    <div id="cameraLayer">
+        This is me on weekends. <br />
+        I create and push buttons. <br />
+        People seem to dig it. <br />
+    </div>
+    <div id="cameraCTA" ng-controller="GalleryCtrl">
+        <button id="cameraButton" ng-click="getPhotoGallery();">Some of my photos</button>
+    </div>
+
+</div>
+
+<div id="laptopDiv">
+    <div id="laptopLayer">
+        This is me during the week. <br />
+        I think and push buttons. <br />
+        Clients seem to dig it. <br />
+    </div>
+    <div id="laptopCTA" >
+        <a id="laptopButton" href="#workDiv">Career highlights</a>
+    </div>
+</div>
+
+<div id="workDiv">
+    <div id="workLayer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-2">
+                    <img src="assets/img/mlb.png">
+                </div>
+                <div class="col-md-4">
+                    Implemented Apple Pay and Google Wallet for MLB's mobile ticketing website.
+                </div>
+                <div class="col-md-2">
+                    <img src="assets/img/conagra.png">
+                </div>
+                <div class="col-md-4">
+                    Developed a sentiment analysis algorithm to analyze social media for the purpose of
+                    predicting the future price of commodities.
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-2">
+                    <img src="assets/img/payless.png">
+                </div>
+                <div class="col-md-4">
+                    Assisted Payless in the development of their APIs which were used to develop their tablet website.
+                </div>
+                <div class="col-md-2">
+                    <img src="assets/img/statefarm.png">
+                </div>
+                <div class="col-md-4">
+                    Assisted in the development of StateFarm's loyalty program so StateFarm customers can redeem points for rewards.
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-2">
+                    <img src="assets/img/nielsen.png">
+                </div>
+                <div class="col-md-4">
+                    Developed an automated onboarding program that integrated with several proprietary systems
+                    which resulted in expediting onboarding by 300%
+                </div>
+                <div class="col-md-2">
+                    <img src="assets/img/autonation.png">
+                </div>
+                <div class="col-md-4">
+                     Used their APIs to add new functionality for their tablet website.
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-2">
+                    <img src="assets/img/artcom.png">
+                </div>
+                <div class="col-md-4">
+                    While developing their mobile site, assisted them in developing their API they would late use
+                    on their desktop site
+                </div>
+                <div class="col-md-2">
+                    <img src="assets/img/brighthouse.png">
+                </div>
+                <div class="col-md-4">
+                    Created an application that assisted their inbound call center team to troubleshoot customers who
+                    were experiencing issues with their equipment.  Also developed a real-time dashboard.
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-2">
+                    <img src="assets/img/tervis.png">
+                </div>
+                <div class="col-md-4">
+                    Created an application that allowed Tervis to review and approve or deny any customer uploaded images
+                    before being printed onto a tumbler.
+                </div>
+                <div class="col-md-2">
+                    <img src="assets/img/pwc.png">
+                </div>
+                <div class="col-md-4">
+                     grid columns. It includes options for device-based column sizing, reordering columns, and more.
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="workCTA" >
+        <a id="workButton" href="assets/pdf/resume.pdf" target="_blank">Download my resume</a>
+    </div>
+</div>
+
+<div id="contactDiv">
+    <div id="contactLayer">
+        Now it's your turn. <br />
+        To push some buttons. <br />
+        Trust me, I'll dig it. <br />
+    </div>
+    <div id="footer" >
+        Terms & Conditions |
+        FAQs |
+
+    </div>
+</div>
+
+<script>
+    function initMap(lat,lng) {
+        var myLatLng = {lat: parseFloat(lat), lng: parseFloat(lng)};
+
+        var map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 14,
+            center: myLatLng
+        });
+
+        var marker = new google.maps.Marker({
+            position: myLatLng,
+            map: map,
+            title: 'Hello World!'
+        });
+    }
+
+</script>
+<script src="https://code.jquery.com/jquery-2.2.4.min.js"   integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="   crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"   integrity="sha256-xNjb53/rY+WmG+4L6tTl9m6PpqknWZvRt0rO1SRnJzw="   crossorigin="anonymous"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAh7BtUc6rMb3flhrDmvusoTWLnM48_MBY" async defer></script>
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.10/angular-touch.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-route.min.js"></script>
+<script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-1.3.2.js"></script>
+<script src="assets/js/angular-bootstrap-lightbox.js"></script>
+<script src="assets/js/slideshow.js"></script>
+<script src="app/app.module.js"></script>
+<script src="assets/js/functions.js"></script>
+
+<script>
+    function changePage()
+    {
+        initMap(document.getElementById('txtLat').value, document.getElementById('txtLng').value);
+    }
+
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-22614030-3', 'auto');
+    ga('send', 'pageview');
+
+</script>
+</body>
+
+
+</html>
