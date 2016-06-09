@@ -55,7 +55,7 @@ header nav a:hover {
 }
 header.smaller {
     height: 75px;
-
+    background: rgba(255, 255, 255, 0.7);
 }
 
 header.smaller nav a {
