@@ -385,6 +385,10 @@ nav a:hover {
         display:none;
     }
 
+    #mobileCareer {
+        display:none;
+    }
+
     #contactLayer {
         top:100px;
         left:20px;
