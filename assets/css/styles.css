@@ -31,7 +31,10 @@ header span.logo {
     -ms-transition: all 0.3s;
     -o-transition: all 0.3s;
     transition: all 0.3s;
-    padding: 0 25px 0 25px;
+}
+
+header span.logo img {
+    padding: 5px 5px 0px 5px;
 }
 
 header nav {
@@ -248,7 +251,6 @@ nav a:hover {
 
 #workLayer {
     position: relative;
-    left: 5%;
     top: 80px;
     font-family: 'Arial', serif;
     font-size:1em;
@@ -321,9 +323,29 @@ nav a:hover {
 
 @media all and (max-width: 700px) {
 
+    header.smaller {
+        height: 80px;
+        background: rgba(255, 255, 255, 0.7);
+    }
+
+    header.smaller nav {
+        position: absolute;
+        top: 29px;
+        left: 0px;
+    }
+
+    header.smaller span.logo img {
+        padding: 5px 0 0 10px;
+        vertical-align: top;
+    }
+
+    header.smaller nav a {
+        line-height: 80px;
+    }
+
     header span.logo {
-        padding: 0 10px 0 10px;
-        line-height:100px;
+        padding: 0 0px 0 0px;
+        line-height:80px;
     }
 
     header nav a {
@@ -390,7 +412,7 @@ nav a:hover {
     }
 
     #contactLayer {
-        top:100px;
+        top:80px;
         left:20px;
         font-size:2em;
     }
@@ -401,11 +423,20 @@ nav a:hover {
 
     .col-md-2 {
         float:left;
+        padding:10px;
+    }
 
+    .col-md-4 {
+        padding:10px;
     }
 
     .row {
         border:none;
+        padding:0px;
+    }
+
+    .section {
+        display:block;
     }
 
 }
