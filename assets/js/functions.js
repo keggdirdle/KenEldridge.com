@@ -10,14 +10,24 @@ $(document).ready(function(){
     });
 
     function init() {
+
+        var shrinkOn = 150;
+        header = document.querySelector("header");
+
+        if(window.pageYOffset > shrinkOn || document.documentElement.scrollTop)
+        {
+            $(header).addClass("smaller");
+        } else {
+            $(header).removeClass("smaller");
+        }
+
+
         window.addEventListener('scroll', function(e){
-            var distanceY = window.pageYOffset || document.documentElement.scrollTop,
-                shrinkOn = 150,
-                header = document.querySelector("header");
+            var distanceY = window.pageYOffset || document.documentElement.scrollTop
             if (distanceY > shrinkOn) {
                 $(header).addClass("smaller");
             } else {
-                    $(header).removeClass("smaller");
+                $(header).removeClass("smaller");
             }
         });
     }

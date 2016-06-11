@@ -43,7 +43,7 @@ header nav a {
     margin-left: 20px;
     color: #ff6400;
     font-weight: 700;
-    font-size: 18px;
+    font-size: 1.2em;
     -webkit-transition: all 0.3s;
     -moz-transition: all 0.3s;
     -ms-transition: all 0.3s;
@@ -70,40 +70,6 @@ header.smaller span.logo img {
     width:75%;
 }
 
-@media all and (max-width: 660px) {
-    header span.logo {
-        display: block;
-        float: none;
-        margin: 0 auto;
-        height: 100px;
-        line-height: 100px;
-        width:50%;
-    }
-    header nav {
-        display: block;
-        float: none;
-        height: 50px;
-        text-align: center;
-        margin: 0 auto;
-    }
-    header nav a {
-        line-height: 50px;
-        margin: 0 10px;
-    }
-    header.smaller {
-        height: 75px;
-    }
-    header.smaller span.logo {
-        height: 40px;
-        line-height: 40px;
-    }
-    header.smaller nav {
-        height: 35px;
-    }
-    header.smaller nav a {
-        line-height: 35px;
-    }
-}
 
 /* end of header style */
 
@@ -139,11 +105,6 @@ nav a:hover {
     position: absolute;
     z-index:9;
     overflow: hidden;
-}
-@media (max-width: 600px) {
-    #musicDiv {
-        background: url(../img/music.jpg) no-repeat top left;
-    }
 }
 
 #musicLayer {
@@ -354,4 +315,93 @@ nav a:hover {
 .row {
     border-bottom:solid 1px silver;
     padding:10px;
+}
+
+
+
+@media all and (max-width: 700px) {
+
+    header span.logo {
+        padding: 0 10px 0 10px;
+        line-height:100px;
+    }
+
+    header nav a {
+        line-height:unset;
+        font-size:1em;
+    }
+
+    #musicDiv {
+        background: url(../img/music.jpg) no-repeat top left;
+        background-color:black;
+    }
+
+    #musicLayer {
+        top:200px;
+        left:10px;
+        font-size:2em;
+    }
+
+    #musicLayer img {
+        display:none;
+    }
+
+    #musicCTA {
+        width:70%;
+    }
+
+    #cameraDiv {
+        background: url(../img/camera.jpg) no-repeat bottom center;
+    }
+
+    #cameraLayer {
+        top:100px;
+        left:20px;
+        font-size:2em;
+    }
+
+    #cameraCTA {
+        width:80%;
+    }
+
+    #laptopMobile {
+        background: rgba(255,255,255,.5);
+        width:100%;
+        height:100%;
+    }
+
+    #laptopLayer {
+        top:200px;
+        left:20px;
+        font-size:2em;
+        position: absolute;
+    }
+
+    #laptopCTA {
+        width:80%;
+    }
+
+    #workCTA {
+        display:none;
+    }
+
+    #contactLayer {
+        top:100px;
+        left:20px;
+        font-size:2em;
+    }
+
+    #contactLayer div a img {
+        padding:5px;
+    }
+
+    .col-md-2 {
+        float:left;
+
+    }
+
+    .row {
+        border:none;
+    }
+
 }

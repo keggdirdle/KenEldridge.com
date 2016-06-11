@@ -59,6 +59,6 @@
     <div id="map"></div>
     <div id="details">
         <div class="popupText">Date: {{Lightbox.eventStateDate | date:shortDate}}</div>
-        <div class="popupText">Time: {{Lightbox.startTime}} to {{Lightbox.endTime}}</div>
+        <div class="popupText">Time: {{Lightbox.startTime | date:'hh:mm a'}} to {{Lightbox.endTime | date:'hh:mm a'}}</div>
     </div>
 </div>

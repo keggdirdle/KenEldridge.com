@@ -2,7 +2,7 @@ angular.module('demo2', ['bootstrapLightbox'])
 
 
 
-.controller('GalleryCtrl', function ($scope, Lightbox, musicFactory, photoFactory) {
+.controller('GalleryCtrl', function ($scope, Lightbox, musicFactory, photoFactory, $filter) {
 
     //exposes this function so it can be called from a view
     $scope.getUpcomingShows = getUpcomingShows;
@@ -16,9 +16,10 @@ angular.module('demo2', ['bootstrapLightbox'])
             .then(function (response) {
                 var yesterdayDate = new Date();
                 yesterdayDate.setDate(yesterdayDate.getDate()-1);
-                $scope.images = response.data.filter(function(item){
-                    return new Date(item.eventStateDate) > yesterdayDate;
+                $scope.images = response.data.items.filter(function(item){
+                    return new Date(item.start.dateTime) > yesterdayDate;
                 });
+                $scope.images = $filter('orderBy')($scope.images, 'start.dateTime');
                 console.log($scope.images);
                 openLightboxModal(0,'app/partials/shows.html');
             }, function (error) {
@@ -51,7 +52,10 @@ angular.module('demo2', ['bootstrapLightbox'])
     var musicFactory = {};
 
     musicFactory.getUpcomingShows = function () {
-        return $http.get('./data/shows.json')
+        //return $http.get('./data/shows.json')
+
+        return $http.get('https://www.googleapis.com/calendar/v3/calendars/uk6veb0gp2bb35glaetcf18300%40group.calendar.google.com/events?key=AIzaSyAh7BtUc6rMb3flhrDmvusoTWLnM48_MBY')
+
     }
     return musicFactory;
 })

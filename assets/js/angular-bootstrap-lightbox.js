@@ -117,30 +117,30 @@ angular.module('bootstrapLightbox').provider('Lightbox', function () {
 
   this.getEventTitle = function(image)
   {
-    return image.eventTitle;
+    return image.summary;
   };
 
   this.getLat = function(image)
   {
-    return image.lat;
+    return image.location.split(',')[0];
   };
   this.getLng = function(image)
   {
-    return image.lng;
+    return image.location.split(',')[1];
   };
 
   this.getEventStateDate = function(image)
   {
-    return image.eventStateDate;
+    return image.start.dateTime;
   };
 
   this.getStartTime = function(image)
   {
-    return image.startTime;
+    return image.start.dateTime;
   };
   this.getEndTime = function(image)
   {
-    return image.endTime;
+    return image.end.dateTime;
   };
 
 
