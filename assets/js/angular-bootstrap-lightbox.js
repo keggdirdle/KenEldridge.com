@@ -91,7 +91,7 @@ angular.module('bootstrapLightbox').provider('Lightbox', function () {
    * @name     fullScreenMode
    * @memberOf bootstrapLightbox.Lightbox
    */
-  this.fullScreenMode = false;
+  this.fullScreenMode = true;
 
   /**
    * @param    {*} image An element in the array of images.
@@ -122,25 +122,40 @@ angular.module('bootstrapLightbox').provider('Lightbox', function () {
 
   this.getLat = function(image)
   {
-    return image.location.split(',')[0];
+    if(image.location != undefined)
+      return image.location.split(',')[0];
+    else
+      return "";
   };
   this.getLng = function(image)
   {
-    return image.location.split(',')[1];
+    if(image.location != undefined)
+      return image.location.split(',')[1];
+    else
+      return "";
   };
 
   this.getEventStateDate = function(image)
   {
-    return image.start.dateTime;
+    if(image.start != undefined)
+      return image.start.dateTime;
+    else
+      return "";
   };
 
   this.getStartTime = function(image)
   {
-    return image.start.dateTime;
+    if(image.start != undefined)
+      return image.start.dateTime;
+    else
+      return "";
   };
   this.getEndTime = function(image)
   {
-    return image.end.dateTime;
+    if(image.end != undefined)
+      return image.end.dateTime;
+    else
+      return "";
   };
 
 
@@ -394,6 +409,8 @@ angular.module('bootstrapLightbox').provider('Lightbox', function () {
           }
         });
 
+        
+
         return Lightbox.modalInstance;
       };
 
@@ -460,7 +477,7 @@ angular.module('bootstrapLightbox').provider('Lightbox', function () {
           }
         };
 
-        if (!Lightbox.isVideo(image)) {
+        if (!Lightbox.isVideo(image) && document.getElementById("image-container")) {
           // load the image before setting it, so everything in the view is
           // updated at the same time; otherwise, the previous image remains while
           // the current image is loading

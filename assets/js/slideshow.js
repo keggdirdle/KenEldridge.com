@@ -22,6 +22,7 @@ angular.module('demo2', ['bootstrapLightbox'])
                 $scope.images = $filter('orderBy')($scope.images, 'start.dateTime');
                 console.log($scope.images);
                 openLightboxModal(0,'app/partials/shows.html');
+                init();
             }, function (error) {
                 $scope.status = 'Unable to load customer data: ' + error.message;
             });
@@ -32,10 +33,20 @@ angular.module('demo2', ['bootstrapLightbox'])
             .then(function (response) {
                 $scope.images = response.data;
                 console.log(response.data);
-                openLightboxModal(0,'app/partials/slideshow.html')
+                openLightboxModal(0,'app/partials/slideshow.html');
+
             }, function (error) {
                 $scope.status = 'Unable to load customer data: ' + error.message;
             });
+    }
+
+    function init() {
+        if (!$("#map").size()) {
+            window.requestAnimationFrame(init);  //wait for the DOM element to load
+        }
+        else {
+            initMap($scope.images[0].location.split(',')[0], $scope.images[0].location.split(',')[1]);
+        }
     }
 
 
@@ -43,7 +54,7 @@ angular.module('demo2', ['bootstrapLightbox'])
 
     function openLightboxModal (index,template) {
         Lightbox.openModal($scope.images, index, template);
-    };
+    }
 
 })
 
