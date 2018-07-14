@@ -41,7 +41,7 @@
 </style>
 
 
-<div class="modal-body" ng-swipe-left="Lightbox.nextImage()" ng-swipe-right="Lightbox.prevImage()">
+<div class="modal-body" >
     <div class="popupText index">{{Lightbox.index + 1}} / {{Lightbox.images.length}}</div>
     <div class="lightbox-nav">
         <button class="close" aria-hidden="true" ng-click="$dismiss()">×</button>
@@ -53,8 +53,7 @@
     </div>
 </div>
 <div class="modal-body map"
-     ng-swipe-left="Lightbox.nextImage();"
-     ng-swipe-right="Lightbox.prevImage();">
+     >
     <h3>{{Lightbox.eventTitle}}</h3>
     <div id="map"></div>
     <div id="details">

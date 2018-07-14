@@ -409,7 +409,7 @@ angular.module('bootstrapLightbox').provider('Lightbox', function () {
           }
         });
 
-        
+
 
         return Lightbox.modalInstance;
       };
@@ -525,7 +525,7 @@ angular.module('bootstrapLightbox').provider('Lightbox', function () {
        */
       Lightbox.nextImage = function () {
         Lightbox.setImage((Lightbox.index + 1) % Lightbox.images.length);
-
+        alert('called');
       };
 
       /**
